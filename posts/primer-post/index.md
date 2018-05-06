@@ -52,7 +52,7 @@ Creamos el primer post, en markdown. :
 nikola new_post -f markdown
 ```
 
-El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido puedes ver [acá]().
+El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido puedes ver [acá](https://sebastiandres.github.io/posts/primer-post/index.md) (o seguir el enlace que dice "Source" al inicio de cada post).
 
 
 ## Crear los archivos html
