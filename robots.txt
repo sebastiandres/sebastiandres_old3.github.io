@@ -1,0 +1,4 @@
+Sitemap: https://sebastiandres.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: sebastiandres.github.io
