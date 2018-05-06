@@ -80,11 +80,11 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>Backstory: Hace algún tiempo tenía un blog en github, con nula actualización excepto para probar algunas características técnicas.
+<p><em>Backstory</em>: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas.
 La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos.</p>
-<p>Asumiento una instalación de conda, los pasos para la instalación son los siguientes:</p>
-<h3>Ambiente**</h3>
-<p>Crear un ambiente de trabajo en conda llamado nikola, instalando pip y webassets</p>
+<p>Asumiendo una instalación de conda, los pasos para la instalación son los siguientes:</p>
+<h3>Ambiente</h3>
+<p>Crear un ambiente de trabajo en conda llamado nikola, instalando pip. Instalar la librería nikola, y luego instalar webassets (sino dará error más adelante para compilar el blog).</p>
 <pre class="code literal-block"><span></span>conda create --name nikola pip
 conda activate nikola
 conda install webassets
@@ -98,34 +98,44 @@ conda install webassets
 
 
 <h3>Crear el blog</h3>
+<p>Inicializamos el blog, sin contenido dummy. </p>
 <pre class="code literal-block"><span></span>nikola init --quiet sebastiandres_by_nikola
-cd sebastiandres.github.io
-nikola build
+cd sebastiandres_by_nikola
 </pre>
 
 
 <h3>Configuración</h3>
-<p>Editar la configuración: </p>
+<p>Editamos la configuración, para colocar algunas cosas básicas como nombre del blog y cosas como esas. Podremos editarlo más adelante: </p>
 <pre class="code literal-block"><span></span>nano conf.py
 </pre>
 
 
 <h3>Crear el primer post</h3>
-<p>Crear el primer post:</p>
+<p>Creamos el primer post, en markdown. :</p>
 <pre class="code literal-block"><span></span>nikola new_post -f markdown
 </pre>
 
 
+<p>El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido puedes ver <a href="posts/primer-post/">acá</a>.</p>
 <h3>Crear los archivos html</h3>
+<p>Nikola funciona creando todos los archivos htmls asociados a los posts que hayas creado. El blog no es el directorio sebastiandres_by_nikola, sino la carpeta <strong>output</strong> que contendrá el html listo para ser navegado (y subido a la web).</p>
 <pre class="code literal-block"><span></span>nikola build
 </pre>
 
 
 <h3>Crear repositorio en github</h3>
-<pre class="code literal-block"><span></span>
+<p>En https://github.com/new crear un nuevo repositorio, del tipo nombre-usuario.github.io para que sirva como blog. En mi caso, el post será sebastiandres.github.io</p>
+<pre class="code literal-block"><span></span>cd output/
+git init
+git add *
+git commit -am "Blog con primer post"
+git remote add origin git@github.com:sebastiandres/sebastiandres.github.io.git
+git push -u origin master
 </pre>
 
 
+<h3>Visitar</h3>
+<p>Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, [https://sebastiandres.github.io/]</p>
 <h3>Cerrar</h3>
 <pre class="code literal-block"><span></span>source deactivate nikola
 </pre>
