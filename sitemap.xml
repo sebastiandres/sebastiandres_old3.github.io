@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://sebastiandres.github.io/</loc>
-  <lastmod>2018-05-07T00:39:00Z</lastmod>
+  <lastmod>2018-05-07T00:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://sebastiandres.github.io/2018/</loc>
@@ -15,15 +15,19 @@
  </url>
  <url>
   <loc>https://sebastiandres.github.io/archive.html</loc>
-  <lastmod>2018-05-07T00:39:00Z</lastmod>
+  <lastmod>2018-05-07T01:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://sebastiandres.github.io/categories/</loc>
-  <lastmod>2018-05-07T00:46:00Z</lastmod>
+  <lastmod>2018-05-07T00:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://sebastiandres.github.io/categories/blog/</loc>
   <lastmod>2018-05-07T00:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sebastiandres.github.io/categories/nikola-blog/</loc>
+  <lastmod>2018-05-07T00:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://sebastiandres.github.io/categories/nikola/</loc>
@@ -36,6 +40,10 @@
  <url>
   <loc>https://sebastiandres.github.io/listings/</loc>
   <lastmod>2018-05-06T12:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</loc>
+  <lastmod>2018-05-07T00:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://sebastiandres.github.io/posts/primer-post/</loc>

@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sebastiandres.github.io (Posts about blog)</title><link>https://sebastiandres.github.io/</link><description></description><atom:link href="https://sebastiandres.github.io/categories/blog.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;Sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Mon, 07 May 2018 00:46:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Primer Post</title><link>https://sebastiandres.github.io/posts/primer-post/</link><dc:creator>Sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Backstory&lt;/em&gt;: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jekyll más algunos tuneos propios, y resulta interesante porque es el mismo github el que genera el html. 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python y Data Science, fácil y en español (Posts about blog)</title><link>https://sebastiandres.github.io/</link><description></description><atom:link href="https://sebastiandres.github.io/categories/blog.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Mon, 07 May 2018 01:01:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cambiando el theme en Nikola</title><link>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.&lt;/p&gt;
+&lt;h3&gt;Cambiando el theme&lt;/h3&gt;
+&lt;p&gt;En &lt;a href="https://themes.getnikola.com/"&gt;https://themes.getnikola.com/&lt;/a&gt; están los temas actuales, de los cuales el tema Zen es el que más me gusta.
+Para instalarlo, usamos el comando&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;nikola theme -i zen
+&lt;/pre&gt;
+
+
+&lt;p&gt;Luego, y tal como nos indican tras la instalación, en el archivo conf.py se deben configurar:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    THEME="zen"
+&lt;/pre&gt;
+
+
+&lt;p&gt;y además&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    NAVIGATION_LINKS = {
+        DEFAULT_LANG: (
+            ('/index.html', 'Home', 'icon-home'),
+            ('/archive.html', 'Archives', 'icon-folder-open-alt'),
+            ('/categories/index.html', 'Tags', 'icon-tags'),
+            ('/rss.xml', 'RSS', 'icon-rss'),
+            ('https://getnikola.com', 'About me', 'icon-user'),
+            ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
+            ('https://github.com/getnikola', 'My Github', 'icon-github'),
+        )
+    }
+&lt;/pre&gt;
+
+
+&lt;p&gt;Opcionalmente, también cambié el color principal de azul (#5670d4) a rojo (#7C0A02).&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;THEME_COLOR = '#7C0A02'
+&lt;/pre&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><guid>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</guid><pubDate>Mon, 07 May 2018 00:50:24 GMT</pubDate></item><item><title>Primer Post</title><link>https://sebastiandres.github.io/posts/primer-post/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Backstory&lt;/em&gt;: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jekyll más algunos tuneos propios, y resulta interesante porque es el mismo github el que genera el html. 
 La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos, además de tener un control mucho más cercano de la generación del html: ahora puedo visualizar exactamente cómo se verá el post sin necesidad de hacer el commit y el rendering en github.&lt;/p&gt;
 &lt;p&gt;Asumiendo una instalación previa de conda, los pasos para la instalación son los siguientes:&lt;/p&gt;
 &lt;h3&gt;Ambiente&lt;/h3&gt;

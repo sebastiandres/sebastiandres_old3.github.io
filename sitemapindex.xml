@@ -7,22 +7,26 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://sebastiandres.github.io/categories/blog.xml</loc>
-  <lastmod>2018-05-07T00:46:00Z</lastmod>
+  <lastmod>2018-05-07T01:01:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://sebastiandres.github.io/categories/nikola-blog.xml</loc>
+  <lastmod>2018-05-07T00:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sebastiandres.github.io/categories/nikola.xml</loc>
-  <lastmod>2018-05-07T00:46:00Z</lastmod>
+  <lastmod>2018-05-07T01:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sebastiandres.github.io/galleries/rss.xml</loc>
-  <lastmod>2018-05-07T00:39:00Z</lastmod>
+  <lastmod>2018-05-07T01:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sebastiandres.github.io/rss.xml</loc>
-  <lastmod>2018-05-07T00:46:00Z</lastmod>
+  <lastmod>2018-05-07T01:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sebastiandres.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-07T00:46:00Z</lastmod>
+  <lastmod>2018-05-07T01:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>
