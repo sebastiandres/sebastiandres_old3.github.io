@@ -74,7 +74,11 @@ git push -u origin master
 ```
 
 ## Visitar
-Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, [https://sebastiandres.github.io/]
+Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, [https://sebastiandres.github.io/](https://sebastiandres.github.io/). Deberia verse algo así:
+
+![Screenshot](/files/PrimerPost.png)
+
+
 
 ## Cerrar
 ```
@@ -83,7 +87,7 @@ source deactivate nikola
 
 ## Links Inspiradores:
 
-* [https://conda.io/docs/user-guide/tasks/manage-environments.html](): Manejar ambientes en conda (en inglés).
-* [https://getnikola.com/getting-started.html](): Guia de inicio de nikola (en inglés).
-* [https://daringfireball.net/projects/markdown/syntax](): Explicacion de markdown (en inglés).
+* [https://conda.io/docs/user-guide/tasks/manage-environments.html](https://conda.io/docs/user-guide/tasks/manage-environments.html): Manejar ambientes en conda (en inglés).
+* [https://getnikola.com/getting-started.html](https://getnikola.com/getting-started.html): Guia de inicio de nikola (en inglés).
+* [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax): Explicacion de markdown (en inglés).
 
