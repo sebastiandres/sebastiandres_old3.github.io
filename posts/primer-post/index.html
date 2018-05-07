@@ -14,10 +14,11 @@
 <meta property="og:site_name" content="sebastiandres.github.io">
 <meta property="og:title" content="Primer Post">
 <meta property="og:url" content="https://sebastiandres.github.io/posts/primer-post/">
-<meta property="og:description" content="Backstory: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas.
-La motivación para el cambio de jekyll">
+<meta property="og:description" content="Backstory: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jeky">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-05-06T01:42:46Z">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="nikola">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -90,9 +91,9 @@ La motivación para el cambio de jekyll">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p><em>Backstory</em>: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas.
-La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos.</p>
-<p>Asumiendo una instalación de conda, los pasos para la instalación son los siguientes:</p>
+<p><em>Backstory</em>: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jekyll más algunos tuneos propios, y resulta interesante porque es el mismo github el que genera el html. 
+La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos, además de tener un control mucho más cercano de la generación del html: ahora puedo visualizar exactamente cómo se verá el post sin necesidad de hacer el commit y el rendering en github.</p>
+<p>Asumiendo una instalación previa de conda, los pasos para la instalación son los siguientes:</p>
 <h3>Ambiente</h3>
 <p>Crear un ambiente de trabajo en conda llamado nikola, instalando pip. Instalar la librería nikola, y luego instalar webassets (sino dará error más adelante para compilar el blog).</p>
 <pre class="code literal-block"><span></span>conda create --name nikola pip
@@ -108,25 +109,25 @@ conda install webassets
 
 
 <h3>Crear el blog</h3>
-<p>Inicializamos el blog, sin contenido dummy. </p>
+<p>Inicializamos el blog, sin contenido dummy (opción <code>--quiet</code>). </p>
 <pre class="code literal-block"><span></span>nikola init --quiet sebastiandres_by_nikola
 cd sebastiandres_by_nikola
 </pre>
 
 
 <h3>Configuración</h3>
-<p>Editamos la configuración, para colocar algunas cosas básicas como nombre del blog y cosas como esas. Podremos editarlo más adelante: </p>
+<p>Editamos la configuración, para colocar algunas cosas básicas como nombre del blog y detalles como ésos. Podremos editarlo más adelante: </p>
 <pre class="code literal-block"><span></span>nano conf.py
 </pre>
 
 
 <h3>Crear el primer post</h3>
-<p>Creamos el primer post, en markdown. :</p>
+<p>Creamos el primer post, en markdown:</p>
 <pre class="code literal-block"><span></span>nikola new_post -f markdown
 </pre>
 
 
-<p>El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido puedes ver <a href="https://sebastiandres.github.io/posts/primer-post/index.md">acá</a> (o seguir el enlace que dice "Source" al inicio de cada post).</p>
+<p>El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido en markdown puedes ver <a href="https://sebastiandres.github.io/posts/primer-post/index.md">acá</a> (o seguir el enlace que dice "Source" al inicio de cada post).</p>
 <h3>Crear los archivos html</h3>
 <p>Nikola funciona creando todos los archivos htmls asociados a los posts que hayas creado. El blog no es el directorio sebastiandres_by_nikola, sino la carpeta <strong>output</strong> que contendrá el html listo para ser navegado (y subido a la web).</p>
 <pre class="code literal-block"><span></span>nikola build
@@ -134,7 +135,7 @@ cd sebastiandres_by_nikola
 
 
 <h3>Crear repositorio en github</h3>
-<p>En https://github.com/new crear un nuevo repositorio, del tipo nombre-usuario.github.io para que sirva como blog. En mi caso, el post será sebastiandres.github.io</p>
+<p>En https://github.com/new crear un nuevo repositorio, del tipo nombre-usuario.github.io para que sirva como blog. En mi caso, el blog será sebastiandres.github.io</p>
 <pre class="code literal-block"><span></span>cd output/
 git init
 git add *
@@ -146,24 +147,29 @@ git push -u origin master
 
 <h3>Visitar</h3>
 <p>Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, <a href="https://sebastiandres.github.io/">https://sebastiandres.github.io/</a>. Deberia verse algo así:</p>
-<p><img alt="Screenshot" src="../../files/PrimerPost.png"></p>
+<p><img alt="Screenshot" src="https://sebastiandres.github.io/posts/primer-post/PrimerPost.png"></p>
+<p>Listo, no era tan dificil configurar el blog con los valores por defecto.</p>
 <h3>Cerrar</h3>
+<p>Por último, cerramos el ambiente de trabajo que hemos creado.</p>
 <pre class="code literal-block"><span></span>source deactivate nikola
 </pre>
 
 
-<h3>Links Inspiradores:</h3>
+<h3>Links útiles:</h3>
 <ul>
 <li>
-<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html">https://conda.io/docs/user-guide/tasks/manage-environments.html</a>: Manejar ambientes en conda (en inglés).</li>
+<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html">https://conda.io/docs/user-guide/tasks/manage-environments.html</a>: Manejo ambientes en conda (en inglés).</li>
 <li>
-<a href="https://getnikola.com/getting-started.html">https://getnikola.com/getting-started.html</a>: Guia de inicio de nikola (en inglés).</li>
+<a href="https://getnikola.com/getting-started.html">https://getnikola.com/getting-started.html</a>: Guía de instalación inicial de nikola (en inglés).</li>
 <li>
 <a href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a>: Explicacion de markdown (en inglés).</li>
 </ul>
 </div>
     </div>
-    <aside class="postpromonav"><nav></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/blog/" rel="tag">blog</a></li>
+            <li><a class="tag p-category" href="../../categories/nikola/" rel="tag">nikola</a></li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
         <div id="disqus_thread"></div>
