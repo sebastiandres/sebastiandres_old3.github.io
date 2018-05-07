@@ -23,28 +23,27 @@ nikola theme -i zen
 Luego, y tal como nos indican tras la instalación, en el archivo conf.py se deben configurar:
 
 ```
-    THEME="zen"
+THEME="zen"
 ```
 
 y además
 
 ```
-    NAVIGATION_LINKS = {
-        DEFAULT_LANG: (
-            ('/index.html', 'Home', 'icon-home'),
-            ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-            ('/categories/index.html', 'Tags', 'icon-tags'),
-            ('/rss.xml', 'RSS', 'icon-rss'),
-            ('https://getnikola.com', 'About me', 'icon-user'),
-            ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
-            ('https://github.com/getnikola', 'My Github', 'icon-github'),
-        )
-    }
+NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+        ('/index.html', 'Principal', 'icon-home'),
+        ('/archive.html', 'Archivos', 'icon-folder-open-alt'),
+        ('/categories/index.html', 'Etiquetas', 'icon-tags'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
+        ('https://cl.linkedin.com/in/sebastiandres', 'LinkedIn', 'icon-user'),
+        ('https://twitter.com/sebastiandres', 'Twitter', 'icon-twitter'),
+        ('https://github.com/sebastiandres', 'Github', 'icon-github'),
+   )
+}
 ```
 
-Opcionalmente, también cambié el color principal de azul (#5670d4) a rojo (#7C0A02).
+Con estos cambios, el blog ahora debería verse así:
 
-```
-THEME_COLOR = '#7C0A02'
-```
+![Screenshot](https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/ZenTheme.png)
+
 
