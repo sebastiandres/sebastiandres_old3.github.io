@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sebastiandres.github.io (Posts about nikola)</title><link>https://sebastiandres.github.io/</link><description></description><atom:link href="https://sebastiandres.github.io/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;Sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Mon, 07 May 2018 00:46:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Primer Post</title><link>https://sebastiandres.github.io/posts/primer-post/</link><dc:creator>Sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Backstory&lt;/em&gt;: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jekyll más algunos tuneos propios, y resulta interesante porque es el mismo github el que genera el html. 
+La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos, además de tener un control mucho más cercano de la generación del html: ahora puedo visualizar exactamente cómo se verá el post sin necesidad de hacer el commit y el rendering en github.&lt;/p&gt;
+&lt;p&gt;Asumiendo una instalación previa de conda, los pasos para la instalación son los siguientes:&lt;/p&gt;
+&lt;h3&gt;Ambiente&lt;/h3&gt;
+&lt;p&gt;Crear un ambiente de trabajo en conda llamado nikola, instalando pip. Instalar la librería nikola, y luego instalar webassets (sino dará error más adelante para compilar el blog).&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;conda create --name nikola pip
+conda activate nikola
+conda install webassets
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Instalar Nikola&lt;/h3&gt;
+&lt;p&gt;Instalamos la última versión de Nikola:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;pip install -U --upgrade-strategy=eager Nikola==8.0.0b1
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Crear el blog&lt;/h3&gt;
+&lt;p&gt;Inicializamos el blog, sin contenido dummy (opción &lt;code&gt;--quiet&lt;/code&gt;). &lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;nikola init --quiet sebastiandres_by_nikola
+cd sebastiandres_by_nikola
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Configuración&lt;/h3&gt;
+&lt;p&gt;Editamos la configuración, para colocar algunas cosas básicas como nombre del blog y detalles como ésos. Podremos editarlo más adelante: &lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;nano conf.py
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Crear el primer post&lt;/h3&gt;
+&lt;p&gt;Creamos el primer post, en markdown:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f markdown
+&lt;/pre&gt;
+
+
+&lt;p&gt;El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido en markdown puedes ver &lt;a href="https://sebastiandres.github.io/posts/primer-post/index.md"&gt;acá&lt;/a&gt; (o seguir el enlace que dice "Source" al inicio de cada post).&lt;/p&gt;
+&lt;h3&gt;Crear los archivos html&lt;/h3&gt;
+&lt;p&gt;Nikola funciona creando todos los archivos htmls asociados a los posts que hayas creado. El blog no es el directorio sebastiandres_by_nikola, sino la carpeta &lt;strong&gt;output&lt;/strong&gt; que contendrá el html listo para ser navegado (y subido a la web).&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;nikola build
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Crear repositorio en github&lt;/h3&gt;
+&lt;p&gt;En https://github.com/new crear un nuevo repositorio, del tipo nombre-usuario.github.io para que sirva como blog. En mi caso, el blog será sebastiandres.github.io&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;cd output/
+git init
+git add *
+git commit -am "Blog con primer post"
+git remote add origin git@github.com:sebastiandres/sebastiandres.github.io.git
+git push -u origin master
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Visitar&lt;/h3&gt;
+&lt;p&gt;Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, &lt;a href="https://sebastiandres.github.io/"&gt;https://sebastiandres.github.io/&lt;/a&gt;. Deberia verse algo así:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot" src="https://sebastiandres.github.io/posts/primer-post/PrimerPost.png"&gt;&lt;/p&gt;
+&lt;p&gt;Listo, no era tan dificil configurar el blog con los valores por defecto.&lt;/p&gt;
+&lt;h3&gt;Cerrar&lt;/h3&gt;
+&lt;p&gt;Por último, cerramos el ambiente de trabajo que hemos creado.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;source deactivate nikola
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Links útiles:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://conda.io/docs/user-guide/tasks/manage-environments.html"&gt;https://conda.io/docs/user-guide/tasks/manage-environments.html&lt;/a&gt;: Manejo ambientes en conda (en inglés).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getnikola.com/getting-started.html"&gt;https://getnikola.com/getting-started.html&lt;/a&gt;: Guía de instalación inicial de nikola (en inglés).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;https://daringfireball.net/projects/markdown/syntax&lt;/a&gt;: Explicacion de markdown (en inglés).&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><guid>https://sebastiandres.github.io/posts/primer-post/</guid><pubDate>Sun, 06 May 2018 01:42:46 GMT</pubDate></item></channel></rss>
