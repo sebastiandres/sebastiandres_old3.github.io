@@ -245,7 +245,7 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 180px;
+  width: 60px;
 }
 @media (max-width: 773px) {
   .social {
@@ -254,7 +254,7 @@ section {
 }
 @media (min-width: 774px) and (max-width: 1047px) {
   .social {
-    width: 210px;
+    width: 60px;
   }
 }
 @media (max-width: 773px) {
@@ -267,7 +267,7 @@ section {
   margin: 0;
   top: 50px;
   display: table;
-  width: 180px;
+  width: 60px;
 }
 @media (max-width: 773px) {
   .social ul {
@@ -282,7 +282,7 @@ section {
 }
 @media (min-width: 774px) and (max-width: 1047px) {
   .social ul {
-    width: 210px;
+    width: 60px;
   }
 }
 .social ul li {
@@ -313,12 +313,12 @@ section {
 .page-content {
   min-height: 100%;
   padding: 48px 0 60px 42px;
-  margin-left: 180px;
+  margin-left: 120px;
 }
 @media (min-width: 774px) and (max-width: 1047px) {
   .page-content {
     padding-left: 24px;
-    margin-left: 214px;
+    margin-left: 120px;
   }
 }
 @media (max-width: 773px) {
@@ -1893,7 +1893,7 @@ dd {
   white-space: nowrap;
 }
 .dl-horizontal dd {
-  margin-left: 180px;
+  margin-left: 60px;
 }
 .pagination {
   margin: 24px 0;
@@ -2555,7 +2555,7 @@ pre.code {
 @media (max-width: 773px) {
   .post .body .figure {
     display: block;
-    width: 97%;
+    width: 100%;
   }
 }
 .post .body .figure > a,
