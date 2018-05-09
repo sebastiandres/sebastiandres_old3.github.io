@@ -1,5 +1,464 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python y Data Science, fácil y en español</title><link>https://sebastiandres.github.io/</link><description>Python y Data Science, fácil y en español</description><atom:link href="https://sebastiandres.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Mon, 07 May 2018 01:06:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cambiando el theme en Nikola</title><link>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python y Data Science, fácil y en español</title><link>https://sebastiandres.github.io/</link><description>Python y Data Science, fácil y en español</description><atom:link href="https://sebastiandres.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Wed, 09 May 2018 01:58:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Prueba de markdown</title><link>https://sebastiandres.github.io/posts/prueba-de-markdown/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;Este post está basado en &lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;https://daringfireball.net/projects/markdown/syntax&lt;/a&gt; y corresponde a una traducción practicamente literal de una selección de su contenido. Todo el crédito corresponde a su autor, John Gruber.&lt;/p&gt;
+&lt;p&gt;La idea es contar con un resumen del código markdown, y a partir de un archivo con múltiples markups de markdown, verificar la correcta interpretación del código markdown por nikolas.&lt;/p&gt;
+&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;h3&gt;Filosofía&lt;/h3&gt;
+&lt;p&gt;Markdown pretende ser tan fácil de leer y fácil de escribir como sea posible. La legibilidad, sin embargo, se enfatiza sobre todo lo demás. Un documento con formato de Markdown debe ser publicable tal como está, como texto sin formato, sin que parezca que ha sido marcado con etiquetas o instrucciones de formato. Si bien la sintaxis de Markdown ha sido influenciada por varios filtros existentes de texto a HTML (Setext, atx, Textile, reStructuredText, Grutatext y EtText), la única fuente de inspiración para la sintaxis de Markdown es el formato de correo electrónico de texto sin formato.&lt;/p&gt;
+&lt;h3&gt;Html en el texto&lt;/h3&gt;
+&lt;p&gt;La sintaxis de Markdown está pensada para un propósito: ser utilizada como un formato para escribir en la web.&lt;/p&gt;
+&lt;p&gt;Markdown no es un reemplazo para HTML. Su sintaxis es muy pequeña, correspondiendo solo a un subconjunto muy pequeño de etiquetas HTML. La idea no es crear una sintaxis que facilite la inserción de etiquetas HTML, sino facilitar la lectura, la escritura y la edición del texto plano. HTML es un formato de &lt;strong&gt;publicación&lt;/strong&gt;; Markdown es un formato de &lt;strong&gt;escritura&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;Para cualquier necesidad que no esté cubierto por la sintaxis de Markdown, simplemente usa HTML. No hay necesidad de adicionales, s[olo usa las etiquetas HTML correspondientes.&lt;/p&gt;
+&lt;p&gt;Las únicas restricciones son los elementos HTML a nivel de bloque, por ejemplo, &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;, entre otras, que deben estar separados del contenido circundante por líneas en blanco, y las etiquetas de inicio y fin del bloque no deben indentarse con pestañas o espacios. Markdown es lo suficientemente inteligente como para no agregar etiquetas &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; adicionales (no deseadas) alrededor de las etiquetas HTML de nivel de bloque.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, para agregar una tabla HTML a un artículo de Markdown:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;Inicio de tabla
+
+&lt;span class="nt"&gt;&amp;lt;table&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;"width:100%"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Nombre&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Apellido&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt; 
+        &lt;span class="nt"&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Edad&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Sebastian&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Flores&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; 
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;35&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Ignacio&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Flores&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; 
+        &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;8&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+
+Fin de tabla
+&lt;/pre&gt;
+
+
+&lt;p&gt;que se verá así:&lt;/p&gt;
+&lt;p&gt;Inicio de tabla&lt;/p&gt;
+&lt;table style="width:100%"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nombre&lt;/th&gt;
+        &lt;th&gt;Apellido&lt;/th&gt; 
+        &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Sebastian&lt;/td&gt;
+        &lt;td&gt;Flores&lt;/td&gt; 
+        &lt;td&gt;35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ignacio&lt;/td&gt;
+        &lt;td&gt;Flores&lt;/td&gt; 
+        &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Fin de tabla&lt;/p&gt;
+&lt;p&gt;Tenga en cuenta que la sintaxis de formato de Markdown no se procesa dentro de las etiquetas HTML de nivel de bloque. Por ejemplo, no puede usar el &lt;em&gt;énfasis&lt;/em&gt; del estilo de marcado * dentro de un bloque de HTML.&lt;/p&gt;
+&lt;p&gt;Se pueden mezclar etiquetas HTML, &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;, o &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; en cualquier parte de un párrafo de Markdown, elemento de lista o encabezado.&lt;/p&gt;
+&lt;h3&gt;Escape automático de caracteres especiales&lt;/h3&gt;
+&lt;p&gt;En HTML, hay dos carácteres que tienen un trato especial: &lt;code&gt;&amp;lt;&lt;/code&gt; y &lt;code&gt;&amp;amp;&lt;/code&gt;. Los corchetes angulares izquierdos (&lt;code&gt;&amp;lt;&lt;/code&gt;) se utilizan para iniciar las etiquetas mientras que los ampersands (&lt;code&gt;&amp;amp;&lt;/code&gt;) se usan para denotar entidades HTML. Si desea mostrarlos como carácteres explícitos debe usarse &lt;code&gt;&amp;amp;lt;&lt;/code&gt; y &lt;code&gt;&amp;amp;amp;&lt;/code&gt; que se mostrarán como &amp;lt; y &amp;amp; (como se ven puede depender de la fuente utilizado)&lt;/p&gt;
+&lt;p&gt;Estos carácteres son problemáticos para lo relacionado con la web. Si se desea escribir sobre AT&amp;amp;T, debe escribir 'AT&amp;amp;T'. &lt;/p&gt;
+&lt;p&gt;Incluso se necesita escapar los símbolos dentro de las URL. Por lo tanto, si desea vincular a http://images.google.com/images?num=30&amp;amp;q=larry+bird
+necesitas codificar la URL como &lt;code&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Elementos de span&lt;/h2&gt;
+&lt;h2&gt;Énfasis&lt;/h2&gt;
+&lt;p&gt;Markdown trata los asteriscos (&lt;code&gt;*&lt;/code&gt;) y los guiones bajos (&lt;code&gt;_&lt;/code&gt;) como indicadores de énfasis. El texto envuelto con uno &lt;code&gt;*&lt;/code&gt; o &lt;code&gt;_&lt;/code&gt; se envolverá con una etiqueta HTML &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; double &lt;code&gt;*&lt;/code&gt;'s o &lt;code&gt;_&lt;/code&gt;'s se envolverán con una etiqueta HTML &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;. Por ejemplo, &lt;code&gt;*texto*&lt;/code&gt; y &lt;code&gt;_texto_&lt;/code&gt;, producira el html &lt;code&gt;&amp;lt;em&amp;gt;texto&amp;lt;/em&amp;gt;&lt;/code&gt; se verá en &lt;em&gt;itálicas&lt;/em&gt;, mientras que &lt;code&gt;**negritas**&lt;/code&gt; y &lt;code&gt;__negritas__&lt;/code&gt; producirá el html &lt;code&gt;&amp;lt;strong&amp;gt;negritas&amp;lt;/strong&amp;gt;&lt;/code&gt; y se verá en &lt;strong&gt;negritas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Puedes usar el estilo que prefieras, en lo personal, creo que es mejor usar sólo la convención de asteriscos. La única restricción es que se debe usar el mismo carácter para abrir y cerrar un lapso de énfasis.&lt;/p&gt;
+&lt;p&gt;No tienen que existir espacios entre el asterisco y las palabras que debe encerrar, por ejemplo &lt;code&gt;un *increíble* día&lt;/code&gt; aparecerá como "un &lt;em&gt;increíble&lt;/em&gt; día" mientras que &lt;code&gt;un * increíble * día&lt;/code&gt; aparecerá como "un * increíble * día".&lt;/p&gt;
+&lt;h3&gt;Código&lt;/h3&gt;
+&lt;p&gt;Para indicar un código, envuélvalo entre comillas (`). Por ejemplo, al usar &lt;code&gt;`print("Hola Mundo")`&lt;/code&gt; se vera así: &lt;code&gt;print("Hola Mundo")&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para incluir el carácter ` dentro de un intervalo de código, conviene usar delimitadores de apertura y cierre, además de espacios:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;`` Hay un backtick literal (`) aquí ``&lt;/code&gt; que producirá &lt;code&gt;Hay un backtick literal (`) aquí&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;El texto del código no es interpretado y nunca arrojará errores, por lo que resulta muy conveniente para incluir snippets de código. Se puede indicar una gran función encerrándola entre triple comilla &lt;code&gt;```&lt;/code&gt;, e incluso en alguno casos, es posible indicar en el inicio del código el lenguaje a ser interpretado. Por ejemplo, el siguiente código:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;```python
+for i in range(10):
+    for j in range(10):
+        print(i*j)
+```
+&lt;/pre&gt;
+
+
+&lt;p&gt;se verá así&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Links&lt;/h3&gt;
+&lt;p&gt;Para crear un enlace en línea, se utiliza un conjunto de paréntesis regulares y paréntesis redondos: primero el texto que recibirá el enlace.&lt;/p&gt;
+&lt;p&gt;El texto &lt;code&gt;[un ejemplo](http://ejemplo.com/ "Título")&lt;/code&gt; produce el código html &lt;code&gt;&amp;lt;a href="http://ejemplo.com/" title="Title"&amp;gt;un ejemplo&amp;lt;/a&amp;gt;&lt;/code&gt; y se ve así: 
+&lt;a href="http://ejemplo.com/" title="Título"&gt;un ejemplo&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;El título es opcional, en efecto, el texto &lt;code&gt;[otro ejemplo](http://otroejemplo.com/)&lt;/code&gt; produce el código html &lt;code&gt;&amp;lt;a href="http://otroejemplo.com/"&amp;gt;otro ejemplo&amp;lt;/a&amp;gt;&lt;/code&gt; que se verá así: &lt;a href="http://otroejemplo.com/"&gt;otro ejemplo&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Si se refiere a un recurso local en el mismo servidor, puede usar rutas relativas: &lt;code&gt;[Primer post](/posts/primer-post/index.html)&lt;/code&gt; produce el código html &lt;code&gt;&amp;lt;a href="/posts/primer-post/index.html"&amp;gt;otro ejemplo&amp;lt;/a&amp;gt;&lt;/code&gt; que quedará como &lt;a href="https://sebastiandres.github.io/posts/primer-post/index.html"&gt;Primer post&lt;/a&gt;. Se toma como ruta de referencia la ruta en la cual se encuentra el archivo html que llama al enlace.  &lt;/p&gt;
+&lt;h3&gt;Imágenes&lt;/h3&gt;
+&lt;p&gt;Es difícil idear una sintaxis "natural" para colocar imágenes en un formato de documento de texto plano.&lt;/p&gt;
+&lt;p&gt;Markdown usa una sintaxis de imagen que se asemeja a la sintaxis de los enlaces.&lt;/p&gt;
+&lt;p&gt;La sintaxis de la imagen es &lt;code&gt;![Alt texto](/ruta/a/img.jpg)&lt;/code&gt; o &lt;code&gt;![Alt text](/path/to/img.jpg "Título opcional")&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo, podemos incrustar imágenes de varias extensiones (gif, jpg, png y svg), con rutas absolutas o locales:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.gif" title="Archivo gif"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.jpg" title="Archivo jpg"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.png" title="Archivo png"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.svg" title="Archivo svg"&gt;&lt;/p&gt;
+&lt;p&gt;y sin olvidar un gif animado &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/pbjt.gif" title="Archivo gif animado"&gt;&lt;/p&gt;
+&lt;h2&gt;Elementos de Bloque&lt;/h2&gt;
+&lt;h3&gt;Párrafos y saltos de línea&lt;/h3&gt;
+&lt;p&gt;Un párrafo es simplemente una o más líneas consecutivas de texto, separadas por una o más líneas en blanco. (Una línea en blanco es cualquier línea que se parece a una línea en blanco; una línea que no contiene más que espacios o pestañas se considera en blanco.) Los párrafos normales no deben sangrarse con espacios o pestañas.&lt;/p&gt;
+&lt;p&gt;La implicación de la regla de "una o más líneas consecutivas de texto" es que Markdown admite párrafos de texto "envueltos". Esto difiere significativamente de la mayoría de los otros formateadores de texto a HTML (incluida la opción "Convertir saltos de línea" de Movable Type) que traduce cada carácter de salto de línea en un párrafo en una etiqueta &lt;br&gt;.&lt;/p&gt;
+&lt;p&gt;Cuando quiera insertar una etiqueta de ruptura &lt;br&gt; usando Markdown, finaliza una línea con dos o más espacios, luego escriba return.&lt;/p&gt;
+&lt;p&gt;Sí, esto requiere un poco más de esfuerzo para crear un &lt;br&gt;, pero una regla simplista de "cada salto de línea es una &lt;br&gt;" no funcionaría para Markdown. Los elementos de la lista de mapeos en línea y de múltiples párrafos de estilo de correo electrónico de Markdown funcionan mejor, y se ven mejor, cuando los formatea con descansos.&lt;/p&gt;
+&lt;h3&gt;Encabezados&lt;/h3&gt;
+&lt;p&gt;Markdown admite dos estilos de encabezados, Setext y atx.&lt;/p&gt;
+&lt;p&gt;Los encabezados de estilo de texto son "subrayados" usando signos iguales (para encabezados de primer nivel) y guiones (para encabezados de segundo nivel). Por ejemplo:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gh"&gt;Este es un H1&lt;/span&gt;
+&lt;span class="gh"&gt;=============&lt;/span&gt;
+
+&lt;span class="gh"&gt;Este es un H2&lt;/span&gt;
+&lt;span class="gh"&gt;-------------&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Cualquier cantidad de subrayado = 's o -'s funcionará.&lt;/p&gt;
+&lt;p&gt;Los encabezados estilo Atx usan 1-6 caracteres hash al comienzo de la línea, correspondientes a los niveles de encabezado 1-6. Por ejemplo:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Esto es un H1
+
+## Este es un H2
+
+###### Este es un H6
+&lt;/pre&gt;
+
+
+&lt;p&gt;Opcionalmente, puede "cerrar" encabezados estilo atx. Esto es puramente cosmético: puede usarlo si cree que se ve mejor. Los hashes de cierre ni siquiera necesitan coincidir con el número de hashes usados ​​para abrir el encabezado. (El número de hashes de apertura determina el nivel del encabezado):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Este es un H1 #
+
+## Esto es un H2 ##
+
+### Este es un H3 ######
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Citas&lt;/h3&gt;
+&lt;p&gt;Markdown utiliza caracteres de estilo de correo electrónico para las citas. Si está familiarizado con la cita de pasajes de texto en un mensaje de correo electrónico, entonces sabe cómo crear una blockquote en Markdown. Se ve mejor si ajusta el texto y coloca un&amp;gt; antes de cada línea:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; Este es un blockquote con dos párrafos. Lorem ipsum dolor sit amet,
+&amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&amp;gt; Vestibulum enim wisi, viverra nec, fringilla en, laoreet vitae, risus.
+&amp;gt;
+&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&amp;gt; id sem consectetuer libero luctus adipiscing.
+&lt;/pre&gt;
+
+
+&lt;p&gt;Markdown le permite ser flojo y solo colocar el&amp;gt; antes de la primera línea de un párrafo ajustado:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; Este es un blockquote con dos párrafos. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla en, laoreet vitae, risus.
+
+&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+&lt;/pre&gt;
+
+
+&lt;p&gt;Las comillas en bloque se pueden anidar (es decir, un blockquote-in-a-blockquote) agregando niveles adicionales de&amp;gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; Este es el primer nivel de cotización.
+&amp;gt;
+&amp;gt;&amp;gt; Esto es blockquote anidado.
+&amp;gt;
+&amp;gt; Volver al primer nivel.
+&lt;/pre&gt;
+
+
+&lt;p&gt;Las comillas en bloque pueden contener otros elementos de reducción, incluidos encabezados, listas y bloques de código:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; ## Esto es un encabezado.
+&amp;gt;
+&amp;gt; 1. Este es el primer elemento de la lista.
+&amp;gt; 2. Este es el segundo elemento de la lista.
+&amp;gt;
+&amp;gt; Aquí hay un código de ejemplo:
+&amp;gt;
+&amp;gt; return shell_exec ("echo $ input | $ markdown_script");
+&lt;/pre&gt;
+
+
+&lt;p&gt;Cualquier editor de texto decente debería facilitar las citas de estilo de correo electrónico. Por ejemplo, con BBEdit, puede hacer una selección y elegir Aumentar nivel de presupuesto en el menú Texto.&lt;/p&gt;
+&lt;h3&gt;Listas&lt;/h3&gt;
+&lt;p&gt;Markdown admite listas ordenadas (numeradas) y desordenadas (con viñetas).&lt;/p&gt;
+&lt;p&gt;Las listas desordenadas usan asteriscos, más y guiones, de forma intercambiable, como marcadores de lista:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;* Rojo
+* Verde
+* Azul
+&lt;/pre&gt;
+
+
+&lt;p&gt;es equivalente a:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;+ Rojo
++ Verde
++ Azul
+&lt;/pre&gt;
+
+
+&lt;p&gt;y:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;- Rojo
+- Verde
+- Azul
+&lt;/pre&gt;
+
+
+&lt;p&gt;Todas ellas se verán así:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rojo&lt;/li&gt;
+&lt;li&gt;Verde&lt;/li&gt;
+&lt;li&gt;Azul&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Las listas ordenadas usan números seguidos de puntos:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;1. Primer ítem
+2. Segundo ítem
+3. Tercer ítem
+&lt;/pre&gt;
+
+
+&lt;p&gt;Es importante tener en cuenta que los números reales que utiliza para marcar la lista no tienen ningún efecto en la salida HTML que Markdown produce. El Markdown HTML producido a partir de la lista anterior es:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt; Primer ítem &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt; Segundo ítem &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt; Tercer ítem &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Si en su lugar escribió la lista en Markdown de esta manera:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;1. Primer ítem
+1. Segundo ítem
+1. Tercer ítem
+&lt;/pre&gt;
+
+
+&lt;p&gt;o incluso:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;3. Primer ítem
+2. Segundo ítem
+42. Tercer ítem
+&lt;/pre&gt;
+
+
+&lt;p&gt;obtendrías la misma salida de HTML, y se verá así:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Primer ítem&lt;/li&gt;
+&lt;li&gt;Segundo ítem&lt;/li&gt;
+&lt;li&gt;Tercer ítem&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;Los marcadores de lista generalmente comienzan en el margen izquierdo, pero pueden tener sangría de hasta tres espacios. Los marcadores de lista deben ir seguidos de uno o más espacios o una pestaña.
+
+Para que las listas se vean bien, puede ajustar elementos con sangrías colgantes:
+
+* Lorem ipsum dolor sit amet, Consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla en, laoreet vitae, risus.
+* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+Pero si quieres ser flojo, no tienes que:
+
+* Lorem ipsum dolor sit amet, Consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla en, laoreet vitae, risus.
+* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+Si los elementos de la lista están separados por líneas en blanco, Markdown ajustará los elementos en etiquetas &amp;lt;p&amp;gt; en la salida HTML. Por ejemplo, esta entrada:
+
+* Ave
+* Magia
+se convertirá en:
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt; Pájaro &amp;lt;/ li&amp;gt;
+&amp;lt;li&amp;gt; Magia &amp;lt;/ li&amp;gt;
+&amp;lt;/ ul&amp;gt;
+Pero esto:
+
+* Ave
+
+* Magia
+se convertirá en:
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt; &amp;lt;p&amp;gt; Bird &amp;lt;/ p&amp;gt; &amp;lt;/ li&amp;gt;
+&amp;lt;li&amp;gt; &amp;lt;p&amp;gt; Magia &amp;lt;/ p&amp;gt; &amp;lt;/ li&amp;gt;
+&amp;lt;/ ul&amp;gt;
+Los artículos de la lista pueden consistir en varios párrafos. Cada párrafo posterior en un elemento de la lista debe sangrarse con 4 espacios o una sola pestaña:
+
+1. Este es un elemento de la lista con dos párrafos. Lorem ipsum dolor
+    sentarse amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla en, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sentarse amet velit.
+
+2. Suspendisse id sem consectetuer libero luctus adipiscing.
+Se ve bien si sangras cada línea de los párrafos siguientes, pero una vez más, Markdown te permitirá ser flojo:
+
+* Este es un elemento de la lista con dos párrafos.
+
+    Este es el segundo párrafo en el elemento de la lista. Eres
+solo se requiere para sangrar la primera línea. Lorem ipsum dolor
+sentarse amet, consectetuer adipiscing elit.
+
+* Otro elemento en la misma lista.
+Para poner una blockquote dentro de un elemento de lista, los delimitadores de blockquote necesitan ser sangrados:
+
+* Un elemento de lista con una blockquote:
+
+    &amp;gt; Esto es un blockquote
+    &amp;gt; dentro de un elemento de la lista.
+Para poner un bloque de código dentro de un elemento de lista, el bloque de código debe sangrarse dos veces: 8 espacios o dos pestañas:
+
+* Un elemento de lista con un bloque de código:
+
+        &amp;lt;el código va aquí&amp;gt;
+Vale la pena señalar que es posible activar una lista ordenada por accidente, escribiendo algo como esto:
+
+1986. Qué gran temporada.
+En otras palabras, una secuencia de número-período-espacio al comienzo de una línea. Para evitar esto, puede hacer una barra invertida, escapar del punto:
+
+1986 \. Que gran temporada.
+Información del Traductor de GoogleComunidadMóvilAcerca de GooglePrivacidad y condicionesAyudaDanos tu opinión
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Bloques de código&lt;/h3&gt;
+&lt;p&gt;Los bloques de código preformateados se utilizan para escribir sobre programación o código fuente de marcado. En lugar de formar párrafos normales, las líneas de un bloque de código se toman literalmente (no se intepretan). Markdown coloca un bloque de código en las etiquetas &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; y &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;. La sintaxis regular de Markdown no se procesa dentro de los bloques de código. Por ejemplo, los asteriscos son solo asteriscos literales dentro de un bloque de código. Esto significa que también es fácil usar Markdown para escribir sobre la propia sintaxis de Markdown.&lt;/p&gt;
+&lt;p&gt;Para producir un bloque de código en Markdown, simplemente indenta cada línea del bloque por al menos 4 espacios o 1 tabulación. Un nivel de indentación (4 espacios o 1 tabulación) se elimina de cada línea del bloque de código. Por ejemplo:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;Ejemplo de código:
+
+    for i in range(10):
+        for j in range(10):
+            print(i*j)
+&lt;/pre&gt;
+
+
+&lt;p&gt;se convertirá en:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Ejemplo de código:&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;pre&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;code&amp;gt;&lt;/span&gt;
+for i in range(10):
+    for j in range(10):
+        print(i*j)
+&lt;span class="nt"&gt;&amp;lt;/ code&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;/ pre&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;y se mostrará así:&lt;/p&gt;
+&lt;p&gt;Ejemplo de código:&lt;/p&gt;
+&lt;p&gt;for i in range(10):
+        for j in range(10):
+            print(i*j)&lt;/p&gt;
+&lt;p&gt;Un bloque de código continúa hasta que llega a una línea que no está sangrada (o al final del artículo).&lt;/p&gt;
+&lt;p&gt;Dentro de un bloque de código, ampersands (&amp;amp;) y corchetes angulares (&amp;lt; y &amp;amp;wt;) se convierten automáticamente en código HTML. Esto hace que sea muy fácil incluir un código de ejemplo usando Markdown; simplemente péguelo e indente, y Markdown manejará la molestia de codificar los símbolos y los corchetes angulares. &lt;/p&gt;
+&lt;h2&gt;Reglas horizontales&lt;/h2&gt;
+&lt;p&gt;Es posible generar una regla horizontal (&lt;code&gt;&amp;lt;hr/&amp;gt;&lt;/code&gt;) colocando tres o más guiones, asteriscos o guiones bajos en una línea por sí solos. Si lo desea, puede usar espacios entre los guiones o los asteriscos. Cada una de las siguientes líneas producirá una regla horizontal:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;* * *
+***
+*****
+- - -
+---------------------------------------
+&lt;/pre&gt;
+
+
+&lt;p&gt;y se vera asi&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Temas avanzados&lt;/h2&gt;
+&lt;h3&gt;Enlaces automáticos&lt;/h3&gt;
+&lt;p&gt;Markdown admite enlaces "automáticos" para URL y direcciones de correo electrónico: utilizando corchetes angulares para la URL o la dirección de correo electrónico. 
+Markdown convertirá &lt;code&gt;&amp;lt;http://example.com/&amp;gt;&lt;/code&gt; en &lt;code&gt;&amp;lt;a href="http://example.com/"&amp;gt; http://example.com/&amp;lt;/a&amp;gt;&lt;/code&gt;, por ejemplo, asi &lt;a href="http://example.com/"&gt;http://example.com/&lt;/a&gt;. 
+Los enlaces automáticos para direcciones de correo electrónico funcionan de manera similar, excepto que se realizará un poco de codificación para ayudar a ocultar su dirección de spambots de recolección de direcciones. Por ejemplo, Markdown cambiará &lt;code&gt;&amp;lt;dirección@ejemplo.com&amp;gt;&lt;/code&gt; en algo como &lt;code&gt;&amp;lt;a href="&amp;amp;#x6D;&amp;amp;#x61;i&amp;amp;#x6C;&amp;amp;#x74;&amp;amp;#x6F;:&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111; &amp;amp;#109;"&amp;gt;&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;&amp;amp;#109;&amp;lt;/a&amp;gt;&lt;/code&gt; pero que se verá y funcionará correctamente en el navegador.&lt;/p&gt;
+&lt;p&gt;Este tipo de truco de codificación de entidades engañará a muchos, si no a la mayoría, de los bots de recolección de direcciones, pero definitivamente no los engañará a todos. Es mejor que nada, pero una dirección publicada de esta manera probablemente comenzará a recibir correo no deseado.&lt;/p&gt;
+&lt;h3&gt;Carácteres especiales&lt;/h3&gt;
+&lt;p&gt;Markdown le permite usar &lt;code&gt;\&lt;/code&gt; (barra invertida) para generar caracteres literales que de otro modo tendrían un significado especial en la sintaxis de formato de Markdown. Por ejemplo, si desea rodear una palabra con asteriscos literales (&lt;code&gt;*&lt;/code&gt;) en lugar de que ponerle negritas, se debe usar &lt;code&gt;\*asteriscos literales\*&lt;/code&gt; para lograr *asteriscos literales* en lugar de &lt;em&gt;asteriscos literales&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Markdown proporciona escapes de barra invertida para los siguientes caracteres:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;\ backslash
+`retroceso
+* asterisco
+_ guion bajo
+{} llaves
+[] corchetes
+() paréntesis
+# símbolo de almohadilla
++ signo más
+- signo menos (guion)
+. punto
+! signo de exclamación
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Links - avanzados&lt;/h2&gt;
+&lt;p&gt;Los enlaces de estilo de referencia usan un segundo conjunto de corchetes, dentro del cual coloca una etiqueta de su elección para identificar el enlace:&lt;/p&gt;
+&lt;p&gt;Este es un enlace de estilo de referencia &lt;a href="http://example.com/longish/path/to/resource/here"&gt;un ejemplo&lt;/a&gt;.
+Opcionalmente puede usar un espacio para separar los conjuntos de corchetes:&lt;/p&gt;
+&lt;p&gt;Este es un enlace de estilo de referencia &lt;a href="http://example.com/longish/path/to/resource/here"&gt;un ejemplo&lt;/a&gt;.
+Luego, en cualquier parte del documento, defina su etiqueta de enlace de esta manera, en una línea sola:&lt;/p&gt;
+&lt;p&gt;Es decir:&lt;/p&gt;
+&lt;p&gt;Corchetes que contienen el identificador de enlace (opcionalmente sangría desde el margen izquierdo utilizando hasta tres espacios);
+seguido por dos puntos;
+seguido de uno o más espacios (o pestañas);
+seguido de la URL del enlace;
+opcionalmente seguido por un atributo de título para el enlace, encerrado en comillas dobles o simples, o encerrado entre paréntesis.
+Las siguientes tres definiciones de enlace son equivalentes:&lt;/p&gt;
+&lt;p&gt;NOTA: Existe un error conocido en Markdown.pl 1.0.1 que impide que se utilicen comillas simples para delimitar títulos de enlaces.&lt;/p&gt;
+&lt;p&gt;La URL del enlace puede, opcionalmente, estar rodeada por corchetes angulares:&lt;/p&gt;
+&lt;p&gt;Puede poner el atributo de título en la línea siguiente y usar espacios o pestañas adicionales para el relleno, que tiende a verse mejor con URL más largas:&lt;/p&gt;
+&lt;p&gt;"Título opcional aquí"
+Las definiciones de enlace solo se usan para crear enlaces durante el procesamiento de Markdown, y se eliminan de su documento en el resultado HTML.&lt;/p&gt;
+&lt;p&gt;Los nombres de definición de enlace pueden consistir en letras, números, espacios y signos de puntuación, pero no distinguen entre mayúsculas y minúsculas. P.ej. estos dos enlaces:&lt;/p&gt;
+&lt;p&gt;[enlace de texto] [a]
+[enlace de texto] [A]
+son equivalentes.&lt;/p&gt;
+&lt;p&gt;El acceso directo de nombre de enlace implícito le permite omitir el nombre del enlace, en cuyo caso el texto del enlace se utiliza como el nombre. Simplemente use un conjunto vacío de corchetes, por ejemplo, para vincular la palabra "Google" al sitio web google.com, simplemente escriba:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://google.com/"&gt;Google&lt;/a&gt;
+Y luego define el enlace:&lt;/p&gt;
+&lt;p&gt;Como los nombres de los enlaces pueden contener espacios, este atajo incluso funciona para varias palabras en el texto del enlace:&lt;/p&gt;
+&lt;p&gt;Visita &lt;a href="http://daringfireball.net/"&gt;Daring Fireball&lt;/a&gt; para más información.
+Y luego define el enlace:&lt;/p&gt;
+&lt;p&gt;Las definiciones de enlaces pueden colocarse en cualquier parte de su documento de reducción. Tiendo a ponerlos inmediatamente después de cada párrafo en el que se usan, pero si lo desea, puede ponerlos todos al final de su documento, como notas a pie de página.&lt;/p&gt;
+&lt;p&gt;Aquí hay un ejemplo de enlaces de referencia en acción:&lt;/p&gt;
+&lt;p&gt;Recibo 10 veces más tráfico de &lt;a href="http://google.com/"&gt;Google&lt;/a&gt; [1] que de
+[Yahoo] [2] o [MSN] [3].&lt;/p&gt;
+&lt;p&gt;[1]: http://google.com/ "Google"
+  [2]: http://search.yahoo.com/ "Búsqueda de Yahoo"
+  [3]: http://search.msn.com/ "Búsqueda de MSN"
+Usando el atajo de nombre de enlace implícito, en su lugar podría escribir:&lt;/p&gt;
+&lt;p&gt;Recibo 10 veces más tráfico de &lt;a href="http://google.com/"&gt;Google&lt;/a&gt; que de
+[Yahoo] [] o [MSN] [].&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://google.com/"&gt;google&lt;/a&gt;: http://google.com/ "Google"
+  [yahoo]: http://search.yahoo.com/ "Búsqueda de Yahoo"
+  [msn]: http://search.msn.com/ "Búsqueda de MSN"
+Los dos ejemplos anteriores producirán el siguiente resultado HTML:&lt;/p&gt;
+&lt;p&gt; Recibo 10 veces más tráfico de &lt;a href="http://google.com/" title="Google"&gt; Google &lt;/a&gt; que desde
+&lt;a href="http://search.yahoo.com/" title="Yahoo Search"&gt; Yahoo &lt;/a&gt;
+o &lt;a href="http://search.msn.com/" title="MSN Search"&gt; MSN &lt;/a&gt;.  p&amp;gt;
+
+A modo de comparación, aquí está el mismo párrafo escrito usando el estilo de enlace en línea de Markdown:
+
+Recibo 10 veces más tráfico de [Google] (http://google.com/ "Google")
+que desde [Yahoo] (http://search.yahoo.com/ "Yahoo Search") o
+[MSN] (http://search.msn.com/ "Búsqueda de MSN").
+El punto de referencia de los enlaces de estilo no es que sean más fáciles de escribir. El punto es que con los enlaces de estilo de referencia, la fuente de su documento es mucho más legible. Compare los ejemplos anteriores: al usar enlaces de estilo de referencia, el párrafo en sí tiene una longitud de solo 81 caracteres; con enlaces en línea, tiene 176 caracteres; y como HTML sin formato, tiene 234 caracteres. En el HTML sin procesar, hay más marcado que texto.
+
+Con los enlaces de estilo de referencia de Markdown, un documento de origen se asemeja mucho más al resultado final, tal como se representa en un navegador. Al permitirle mover los metadatos relacionados con el marcado hacia afuera del párrafo, puede agregar enlaces sin interrumpir el flujo narrativo de su prosa.
+
+
+# Imágenes - avanzados
+
+
+
+Es decir:
+
+Un signo de exclamación:!
+seguido de un conjunto de corchetes, que contiene el texto del atributo alt para la imagen;
+seguido de un conjunto de paréntesis, que contiene la URL o la ruta a la imagen, y un atributo de título opcional encerrado en comillas dobles o simples.
+La sintaxis de la imagen del estilo de referencia se ve así:
+
+! [Alt text] [id]
+Donde "id" es el nombre de una referencia de imagen definida. Las referencias de imagen se definen usando una sintaxis idéntica a las referencias de enlace:
+
+[id]: url / to / image "atributo de título opcional"
+Al escribir estas líneas, Markdown no tiene sintaxis para especificar las dimensiones de una imagen; si esto es importante para usted, simplemente puede usar etiquetas HTML &lt;img&gt; normales.&lt;/p&gt;&lt;/div&gt;</description><guid>https://sebastiandres.github.io/posts/prueba-de-markdown/</guid><pubDate>Tue, 08 May 2018 22:54:44 GMT</pubDate></item><item><title>Cambiando el theme en Nikola</title><link>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.&lt;/p&gt;
 &lt;h3&gt;Cambiando el theme&lt;/h3&gt;
 &lt;p&gt;En &lt;a href="https://themes.getnikola.com/"&gt;https://themes.getnikola.com/&lt;/a&gt; están los temas actuales, de los cuales el tema Zen es el que más me gusta.
 Para instalarlo, usamos el comando&lt;/p&gt;

@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Python y Data Science, fácil y en español">
 <meta name="viewport" content="width=device-width">
-<title>Python y Data Science, fácil y en español | Python y Data Science, fácil y en español</title>
-<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://sebastiandres.github.io/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+<title>Prueba de markdown | Python y Data Science, fácil y en español</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://sebastiandres.github.io/posts/prueba-de-markdown/">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="sebastiandres">
+<meta property="og:site_name" content="Python y Data Science, fácil y en español">
+<meta property="og:title" content="Prueba de markdown">
+<meta property="og:url" content="https://sebastiandres.github.io/posts/prueba-de-markdown/">
+<meta property="og:description" content="Este post está basado en https://daringfireball.net/projects/markdown/syntax y corresponde a una traducción practicamente literal de una selección de su contenido. Todo el crédito corresponde a su aut">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-05-08T22:54:44Z">
 </head>
 <body>
     <section class="social"><ul>
-<li><a href="#" title="Principal"><i class="icon-home"></i></a></li>
-            <li><a href="archive.html" title="Archivos"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="categories/index.html" title="Etiquetas"><i class="icon-tags"></i></a></li>
+<li><a href="../../index.html" title="Principal"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archivos"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Etiquetas"><i class="icon-tags"></i></a></li>
             <li><a href="https://cl.linkedin.com/in/sebastiandres" title="LinkedIn"><i class="icon-linkedin-sign"></i></a></li>
             <li><a href="https://twitter.com/sebastiandres" title="Twitter"><i class="icon-twitter"></i></a></li>
             <li><a href="https://github.com/sebastiandres" title="Github"><i class="icon-github"></i></a></li>
@@ -22,24 +27,25 @@
 
         </ul></section><section class="page-content"><div class="content" rel="main">
             
-        <div class="post">
-            <h1 class="title"><a href="posts/prueba-de-markdown/">Prueba de markdown</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2018-05-08T22:54:44+00:00">2018-05-08 22:54</time>
-</div>
-                <div class="stats">
-                    
-        
-    <a href="posts/prueba-de-markdown/#disqus_thread" data-disqus-identifier="cache/posts/prueba-de-markdown.html">Comments</a>
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name">Prueba de markdown</h1>
 
-
-                </div>
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2018-05-08T22:54:44+00:00">2018-05-08 22:54</time>
             
 
+            
+          |  
+        <a href="index.md" id="sourcelink">Source</a>
+
             </div>
-            <div class="body">
-                <div>
+            
+
+        </div>
+        <div class="body">
+            <div>
 <p>Este post está basado en <a href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a> y corresponde a una traducción practicamente literal de una selección de su contenido. Todo el crédito corresponde a su autor, John Gruber.</p>
 <p>La idea es contar con un resumen del código markdown, y a partir de un archivo con múltiples markups de markdown, verificar la correcta interpretación del código markdown por nikolas.</p>
 <h2>Introducción</h2>
@@ -132,14 +138,14 @@ for i in range(10):
 <p>El texto <code>[un ejemplo](http://ejemplo.com/ "Título")</code> produce el código html <code>&lt;a href="http://ejemplo.com/" title="Title"&gt;un ejemplo&lt;/a&gt;</code> y se ve así: 
 <a href="http://ejemplo.com/" title="Título">un ejemplo</a>. </p>
 <p>El título es opcional, en efecto, el texto <code>[otro ejemplo](http://otroejemplo.com/)</code> produce el código html <code>&lt;a href="http://otroejemplo.com/"&gt;otro ejemplo&lt;/a&gt;</code> que se verá así: <a href="http://otroejemplo.com/">otro ejemplo</a> </p>
-<p>Si se refiere a un recurso local en el mismo servidor, puede usar rutas relativas: <code>[Primer post](/posts/primer-post/index.html)</code> produce el código html <code>&lt;a href="/posts/primer-post/index.html"&gt;otro ejemplo&lt;/a&gt;</code> que quedará como <a href="posts/primer-post/index.html">Primer post</a>. Se toma como ruta de referencia la ruta en la cual se encuentra el archivo html que llama al enlace.  </p>
+<p>Si se refiere a un recurso local en el mismo servidor, puede usar rutas relativas: <code>[Primer post](/posts/primer-post/index.html)</code> produce el código html <code>&lt;a href="/posts/primer-post/index.html"&gt;otro ejemplo&lt;/a&gt;</code> que quedará como <a href="../primer-post/index.html">Primer post</a>. Se toma como ruta de referencia la ruta en la cual se encuentra el archivo html que llama al enlace.  </p>
 <h3>Imágenes</h3>
 <p>Es difícil idear una sintaxis "natural" para colocar imágenes en un formato de documento de texto plano.</p>
 <p>Markdown usa una sintaxis de imagen que se asemeja a la sintaxis de los enlaces.</p>
 <p>La sintaxis de la imagen es <code>![Alt texto](/ruta/a/img.jpg)</code> o <code>![Alt text](/path/to/img.jpg "Título opcional")</code>.</p>
 <p>Así, por ejemplo, podemos incrustar imágenes de varias extensiones (gif, jpg, png y svg), con rutas absolutas o locales:</p>
-<p><img alt="Alt text" src="posts/prueba-de-markdown/colores.gif" title="Archivo gif"><img alt="Alt text" src="posts/prueba-de-markdown/colores.jpg" title="Archivo jpg"><img alt="Alt text" src="posts/prueba-de-markdown/colores.png" title="Archivo png"><img alt="Alt text" src="posts/prueba-de-markdown/colores.svg" title="Archivo svg"></p>
-<p>y sin olvidar un gif animado <img alt="Alt text" src="posts/prueba-de-markdown/pbjt.gif" title="Archivo gif animado"></p>
+<p><img alt="Alt text" src="colores.gif" title="Archivo gif"><img alt="Alt text" src="colores.jpg" title="Archivo jpg"><img alt="Alt text" src="colores.png" title="Archivo png"><img alt="Alt text" src="colores.svg" title="Archivo svg"></p>
+<p>y sin olvidar un gif animado <img alt="Alt text" src="pbjt.gif" title="Archivo gif animado"></p>
 <h2>Elementos de Bloque</h2>
 <h3>Párrafos y saltos de línea</h3>
 <p>Un párrafo es simplemente una o más líneas consecutivas de texto, separadas por una o más líneas en blanco. (Una línea en blanco es cualquier línea que se parece a una línea en blanco; una línea que no contiene más que espacios o pestañas se considera en blanco.) Los párrafos normales no deben sangrarse con espacios o pestañas.</p>
@@ -500,176 +506,44 @@ Donde "id" es el nombre de una referencia de imagen definida. Las referencias de
 [id]: url / to / image "atributo de título opcional"
 Al escribir estas líneas, Markdown no tiene sintaxis para especificar las dimensiones de una imagen; si esto es importante para usted, simplemente puede usar etiquetas HTML <img> normales.</p>
 </div>
-            </div>
         </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/cambiando-el-theme-en-nikola/">Cambiando el theme en Nikola</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2018-05-07T00:50:24+00:00">2018-05-07 00:50</time>
-</div>
-                <div class="stats">
-                    
         
-    <a href="posts/cambiando-el-theme-en-nikola/#disqus_thread" data-disqus-identifier="cache/posts/cambiando-el-theme-en-nikola.html">Comments</a>
-
-
-                </div>
-            
-        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/blog/" rel="tag">blog</a></li>
-           <li><a class="tag p-category" href="categories/nikola/" rel="tag">nikola</a></li>
+        <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../cambiando-el-theme-en-nikola/" rel="prev" title="Cambiando el theme en Nikola">Previous post</a>
+            </li>
         </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div>
-<p>El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.</p>
-<h3>Cambiando el theme</h3>
-<p>En <a href="https://themes.getnikola.com/">https://themes.getnikola.com/</a> están los temas actuales, de los cuales el tema Zen es el que más me gusta.
-Para instalarlo, usamos el comando</p>
-<pre class="code literal-block"><span></span>nikola theme -i zen
-</pre>
-
-
-<p>Luego, y tal como nos indican tras la instalación, en el archivo conf.py se deben configurar:</p>
-<pre class="code literal-block"><span></span>THEME="zen"
-</pre>
-
-
-<p>y además</p>
-<pre class="code literal-block"><span></span>NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
-        ('/index.html', 'Principal', 'icon-home'),
-        ('/archive.html', 'Archivos', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Etiquetas', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('https://cl.linkedin.com/in/sebastiandres', 'LinkedIn', 'icon-user'),
-        ('https://twitter.com/sebastiandres', 'Twitter', 'icon-twitter'),
-        ('https://github.com/sebastiandres', 'Github', 'icon-github'),
-   )
-}
-</pre>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nikolademo",
+            disqus_url="https://sebastiandres.github.io/posts/prueba-de-markdown/",
+        disqus_title="Prueba de markdown",
+        disqus_identifier="cache/posts/prueba-de-markdown.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-<p>Con estos cambios, el blog ahora debería verse así:</p>
-<p><img alt="Screenshot" src="https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/ZenTheme.png"></p>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/primer-post/">Primer Post</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2018-05-06T01:42:46+00:00">2018-05-06 01:42</time>
-</div>
-                <div class="stats">
-                    
         
-    <a href="posts/primer-post/#disqus_thread" data-disqus-identifier="cache/posts/primer-post.html">Comments</a>
-
-
-                </div>
-            
-        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/blog/" rel="tag">blog</a></li>
-           <li><a class="tag p-category" href="categories/nikola/" rel="tag">nikola</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div>
-<p><em>Backstory</em>: Desde hace algún tiempo tengo un blog en github, abandonado a su suerte y con nula actualización excepto para probar algunas características técnicas. El blog se basa en el template de jekyll más algunos tuneos propios, y resulta interesante porque es el mismo github el que genera el html. 
-La motivación para el cambio de jekyll a nikola es conocer nuevas formas de bloggear, los desafíos técnicos asociados y proponerse ser un poco más consistente en escribir artículos, además de tener un control mucho más cercano de la generación del html: ahora puedo visualizar exactamente cómo se verá el post sin necesidad de hacer el commit y el rendering en github.</p>
-<p>Asumiendo una instalación previa de conda, los pasos para la instalación son los siguientes:</p>
-<h3>Ambiente</h3>
-<p>Crear un ambiente de trabajo en conda llamado nikola, instalando pip. Instalar la librería nikola, y luego instalar webassets (sino dará error más adelante para compilar el blog).</p>
-<pre class="code literal-block"><span></span>conda create --name nikola pip
-conda activate nikola
-conda install webassets
-</pre>
-
-
-<h3>Instalar Nikola</h3>
-<p>Instalamos la última versión de Nikola:</p>
-<pre class="code literal-block"><span></span>pip install -U --upgrade-strategy=eager Nikola==8.0.0b1
-</pre>
-
-
-<h3>Crear el blog</h3>
-<p>Inicializamos el blog, sin contenido dummy (opción <code>--quiet</code>). </p>
-<pre class="code literal-block"><span></span>nikola init --quiet sebastiandres_by_nikola
-cd sebastiandres_by_nikola
-</pre>
-
-
-<h3>Configuración</h3>
-<p>Editamos la configuración, para colocar algunas cosas básicas como nombre del blog y detalles como ésos. Podremos editarlo más adelante: </p>
-<pre class="code literal-block"><span></span>nano conf.py
-</pre>
-
-
-<h3>Crear el primer post</h3>
-<p>Creamos el primer post, en markdown:</p>
-<pre class="code literal-block"><span></span>nikola new_post -f markdown
-</pre>
-
-
-<p>El paso anterior nos pedirá un nombre para el post, y tendremos que editarlo. En mi caso, corresponde a este post que estás leyendo y cuyo contenido en markdown puedes ver <a href="https://sebastiandres.github.io/posts/primer-post/index.md">acá</a> (o seguir el enlace que dice "Source" al inicio de cada post).</p>
-<h3>Crear los archivos html</h3>
-<p>Nikola funciona creando todos los archivos htmls asociados a los posts que hayas creado. El blog no es el directorio sebastiandres_by_nikola, sino la carpeta <strong>output</strong> que contendrá el html listo para ser navegado (y subido a la web).</p>
-<pre class="code literal-block"><span></span>nikola build
-</pre>
-
-
-<h3>Crear repositorio en github</h3>
-<p>En https://github.com/new crear un nuevo repositorio, del tipo nombre-usuario.github.io para que sirva como blog. En mi caso, el blog será sebastiandres.github.io</p>
-<pre class="code literal-block"><span></span>cd output/
-git init
-git add *
-git commit -am "Blog con primer post"
-git remote add origin git@github.com:sebastiandres/sebastiandres.github.io.git
-git push -u origin master
-</pre>
-
-
-<h3>Visitar</h3>
-<p>Ahora podemos ver cómo quedó todo, visitando el sitio https://nombre-usuario.github.io/ o en mi caso, <a href="https://sebastiandres.github.io/">https://sebastiandres.github.io/</a>. Deberia verse algo así:</p>
-<p><img alt="Screenshot" src="https://sebastiandres.github.io/posts/primer-post/PrimerPost.png"></p>
-<p>Listo, no era tan dificil configurar el blog con los valores por defecto.</p>
-<h3>Cerrar</h3>
-<p>Por último, cerramos el ambiente de trabajo que hemos creado.</p>
-<pre class="code literal-block"><span></span>source deactivate nikola
-</pre>
-
-
-<h3>Links útiles:</h3>
-<ul>
-<li>
-<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html">https://conda.io/docs/user-guide/tasks/manage-environments.html</a>: Manejo ambientes en conda (en inglés).</li>
-<li>
-<a href="https://getnikola.com/getting-started.html">https://getnikola.com/getting-started.html</a>: Guía de instalación inicial de nikola (en inglés).</li>
-<li>
-<a href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a>: Explicacion de markdown (en inglés).</li>
-</ul>
-</div>
-            </div>
-        </div>
     
 
-    
+
+    </div>
+
         
        <script>var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2018         <a href="mailto:">sebastiandres</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
-    </section><script src="assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
+    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
             $(function(){
                 $('.timeago').timeago();
             });
