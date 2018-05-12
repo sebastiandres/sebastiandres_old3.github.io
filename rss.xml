@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python y Data Science, fácil y en español</title><link>https://sebastiandres.github.io/</link><description>Python y Data Science, fácil y en español</description><atom:link href="https://sebastiandres.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Wed, 09 May 2018 01:58:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Prueba de markdown</title><link>https://sebastiandres.github.io/posts/prueba-de-markdown/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;Este post está basado en &lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;https://daringfireball.net/projects/markdown/syntax&lt;/a&gt; y corresponde a una traducción practicamente literal de una selección de su contenido. Todo el crédito corresponde a su autor, John Gruber.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python y Data Science, fácil y en español</title><link>https://sebastiandres.github.io/</link><description>Python y Data Science, fácil y en español</description><atom:link href="https://sebastiandres.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:"&gt;sebastiandres&lt;/a&gt; </copyright><lastBuildDate>Sat, 12 May 2018 00:59:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Introducción al Markdown</title><link>https://sebastiandres.github.io/posts/introduccion-al-markdown/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;Este post está basado en &lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;https://daringfireball.net/projects/markdown/syntax&lt;/a&gt; y corresponde a una traducción practicamente literal de una selección de su contenido. Todo el crédito corresponde a su autor, John Gruber.&lt;/p&gt;
 &lt;p&gt;La idea es contar con un resumen del código markdown, y a partir de un archivo con múltiples markups de markdown, verificar la correcta interpretación del código markdown por nikolas.&lt;/p&gt;
 &lt;h2&gt;Introducción&lt;/h2&gt;
 &lt;h3&gt;Filosofía&lt;/h3&gt;
@@ -458,7 +458,74 @@ La sintaxis de la imagen del estilo de referencia se ve así:
 Donde "id" es el nombre de una referencia de imagen definida. Las referencias de imagen se definen usando una sintaxis idéntica a las referencias de enlace:
 
 [id]: url / to / image "atributo de título opcional"
-Al escribir estas líneas, Markdown no tiene sintaxis para especificar las dimensiones de una imagen; si esto es importante para usted, simplemente puede usar etiquetas HTML &lt;img&gt; normales.&lt;/p&gt;&lt;/div&gt;</description><guid>https://sebastiandres.github.io/posts/prueba-de-markdown/</guid><pubDate>Tue, 08 May 2018 22:54:44 GMT</pubDate></item><item><title>Cambiando el theme en Nikola</title><link>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.&lt;/p&gt;
+Al escribir estas líneas, Markdown no tiene sintaxis para especificar las dimensiones de una imagen; si esto es importante para usted, simplemente puede usar etiquetas HTML &lt;img&gt; normales.&lt;/p&gt;&lt;/div&gt;</description><guid>https://sebastiandres.github.io/posts/introduccion-al-markdown/</guid><pubDate>Fri, 11 May 2018 22:54:44 GMT</pubDate></item><item><title>Prueba de markdown</title><link>https://sebastiandres.github.io/posts/prueba-de-markdown/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;h2&gt;Prueba de Markdown&lt;/h2&gt;
+&lt;p&gt;Este ejemplo ilustra y testea las funcionalidades principales de un archivo markdown, para verificar que el rendering (en pydocs, jupyter notebook, nikola, etc.) funcione correctamente: &lt;a href="https://sebastiandres.github.io/posts/prueba-de-markdown/index.md"&gt;código original&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Formato básico&lt;/h3&gt;
+&lt;p&gt;El texto se escribe normalmente, y debería mostrarse sin consideraciones adicionales.&lt;/p&gt;
+&lt;p&gt;Es posible colocar un nuevo párrafo, con formateo de texto de &lt;em&gt;italicas&lt;/em&gt; y &lt;strong&gt;negritas&lt;/strong&gt;, y casos anidades: &lt;strong&gt;primer &lt;em&gt;ejemplo&lt;/em&gt; de anidación&lt;/strong&gt; y &lt;em&gt;segundo &lt;strong&gt;ejemplo&lt;/strong&gt; de anidación&lt;/em&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Listas&lt;/h3&gt;
+&lt;h4&gt;Listas enumeradas&lt;/h4&gt;
+&lt;p&gt;Religiones ordenadas por número de seguidores:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Islam&lt;/li&gt;
+&lt;li&gt;Católica&lt;/li&gt;
+&lt;li&gt;Hinduismo&lt;/li&gt;
+&lt;li&gt;Budismo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O sea, &lt;a href="https://www.guioteca.com/futbol-internacional/los-memes-mas-crueles-contra-la-uc-y-su-nuevo-fracaso-en-el-futbol-chileno/"&gt;la católica es segunda&lt;/a&gt; ;-).&lt;/p&gt;
+&lt;h4&gt;Listas sin orden&lt;/h4&gt;
+&lt;p&gt;Hay 10 tipos de personas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Las que saben binario.&lt;/li&gt;
+&lt;li&gt;Las que no saben binario&lt;/li&gt;
+&lt;li&gt;Las que no saben contar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Modificadores de párrafos&lt;/h3&gt;
+&lt;h4&gt;Bloques de código&lt;/h4&gt;
+&lt;p&gt;El código puede escribirse de varias formas:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Código de bloque
+Realizado por indentación.
+    para cada linea
+&lt;/pre&gt;
+
+
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Código de bloque
+Realizado por delimitadores
+    para cada linea
+&lt;/pre&gt;
+
+
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Código de bloque para python&lt;/span&gt;
+&lt;span class="n"&gt;Realizado&lt;/span&gt; &lt;span class="n"&gt;por&lt;/span&gt; &lt;span class="n"&gt;delimitadores&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+    &lt;span class="n"&gt;para&lt;/span&gt; &lt;span class="n"&gt;cada&lt;/span&gt; &lt;span class="n"&gt;linea&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;También podemos ver &lt;code&gt;código en linea&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Citas&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Any sufficiently advanced technology is indistinguishable from magic. (Arthur C. Clark).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;Enlaces&lt;/h3&gt;
+&lt;p&gt;A continuación, colocaremos el mismo enlace con distintos formatos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Versión simple, sólo dirección: &lt;a href="https://sebastiandres.github.io/"&gt;https://sebastiandres.github.io/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Versión con texto: &lt;a href="https://sebastiandres.github.io/"&gt;Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Versión con definición de link al final del documento: &lt;a href="https://sebastiandres.github.io/"&gt;Link&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Images&lt;/h3&gt;
+&lt;p&gt;Podemos insertar imágenes en variados formatos (gif, jpg, png, svg):&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.gif" title="Archivo gif"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.jpg" title="Archivo jpg"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.png" title="Archivo png"&gt; &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/colores.svg" title="Archivo svg"&gt;&lt;/p&gt;
+&lt;p&gt;y sin olvidar un gif animado &lt;img alt="Alt text" src="https://sebastiandres.github.io/posts/prueba-de-markdown/pbjt.gif" title="Archivo gif animado"&gt;.&lt;/p&gt;
+&lt;h3&gt;Referencias&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.markitdown.net/markdown"&gt;https://www.markitdown.net/markdown&lt;/a&gt;: Ejemplo de Markdown usado como base para este archivo. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;&lt;/div&gt;</description><guid>https://sebastiandres.github.io/posts/prueba-de-markdown/</guid><pubDate>Tue, 08 May 2018 22:54:44 GMT</pubDate></item><item><title>Cambiando el theme en Nikola</title><link>https://sebastiandres.github.io/posts/cambiando-el-theme-en-nikola/</link><dc:creator>sebastiandres</dc:creator><description>&lt;div&gt;&lt;p&gt;El theme por defecto de nikola tiene un amplio espacio de mejora. Vamos a cambiarlo por uno más agradable.&lt;/p&gt;
 &lt;h3&gt;Cambiando el theme&lt;/h3&gt;
 &lt;p&gt;En &lt;a href="https://themes.getnikola.com/"&gt;https://themes.getnikola.com/&lt;/a&gt; están los temas actuales, de los cuales el tema Zen es el que más me gusta.
 Para instalarlo, usamos el comando&lt;/p&gt;
