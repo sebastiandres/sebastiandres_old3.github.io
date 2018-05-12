@@ -13,6 +13,8 @@
 
 Este ejemplo ilustra y testea las funcionalidades principales de un archivo markdown, para verificar que el rendering (en pydocs, jupyter notebook, nikola, etc.) funcione correctamente: [código original](/posts/prueba-de-markdown/index.md).
 
+Es posible probar el texto en markdown directamente en línea en diversos sitios, como <https://dillinger.io/>, <https://stackedit.io/app#>, <http://markdownlivepreview.com/>, entre muchos otros.
+
 ---
 
 ## Formato básico
