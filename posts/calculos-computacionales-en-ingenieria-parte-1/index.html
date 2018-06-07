@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Leeme y primera lección">
+<meta name="viewport" content="width=device-width">
+<title>Cálculos Computacionales en Ingeniería - parte 1 | Python y Data Science, fácil y en español</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://sebastiandres.github.io/posts/calculos-computacionales-en-ingenieria-parte-1/">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="sebastiandres">
+<meta property="og:site_name" content="Python y Data Science, fácil y en español">
+<meta property="og:title" content="Cálculos Computacionales en Ingeniería - parte 1">
+<meta property="og:url" content="https://sebastiandres.github.io/posts/calculos-computacionales-en-ingenieria-parte-1/">
+<meta property="og:description" content="Leeme y primera lección">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-06-07T03:21:38Z">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Principal"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archivos"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Etiquetas"><i class="icon-tags"></i></a></li>
+            <li><a href="https://cl.linkedin.com/in/sebastiandres" title="LinkedIn"><i class="icon-linkedin-sign"></i></a></li>
+            <li><a href="https://twitter.com/sebastiandres" title="Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/sebastiandres" title="Github"><i class="icon-github"></i></a></li>
+            <li><a href="http://bitly.com/1H9DQSz" title="Free Money"><i class="icon-dollar"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name">Cálculos Computacionales en Ingeniería - parte 1</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2018-06-07T03:21:38+00:00">2018-06-07 03:21</time>
+            
+
+            
+          |  
+        <a href="index.md" id="sourcelink">Source</a>
+
+            </div>
+            
+
+        </div>
+        <div class="body">
+            <div>
+<p>Existe material valioso de python en inglés pero me parece que muchos estudiantes no acceden al contenido precisamente por estar en inglés en lugar de español. Lo cual es perfectamente comprensible, ya es suficientemente difícil aprender algo nuevo, para qué agregarle un idioma adicional. Pensando en ello, me ofrecí a traducir los notebooks de "Engineering Computations" de <a href="https://twitter.com/lorenaabarba?lang=es">Lorena Barba</a>, que ya poseen en inglés lo módulos <a href="https://github.com/engineersCode/EngComp1_offtheground">1</a>, <a href="https://github.com/engineersCode/EngComp2_takeoff">2</a> y <a href="https://github.com/engineersCode/EngComp3_flyatchange">3</a>.</p>
+<p>El modus operandi es el siguiente: traduzco los módulos con ayuda de un script en python que hacen uso de glob y google translate, y luego edito a mano lo que haga falta. El problema es que la corrección a mano requiere más tiempo de lo que pensaba, al menos para un neurótico detallista como yo.
+En esta primera traducción lista, existen:</p>
+<ul>
+<li>Archivo <a href="https://github.com/engineersCode/EngComp1_offtheground/blob/translation_es/LEEME.md">LEEME</a>, traducción del <a href="https://github.com/engineersCode/EngComp1_offtheground/blob/master/README.md">README</a>.</li>
+<li>Notebook <a href="https://github.com/engineersCode/EngComp1_offtheground/blob/translation_es/notebooks_es/1_Interactuando_con_Python.ipynb">traducido al español</a>, y versión <a href="https://github.com/engineersCode/EngComp1_offtheground/blob/master/notebooks_en/1_Interacting_with_Python.ipynb">original en inglés</a>.</li>
+</ul>
+<p>Notas de la traducción:</p>
+<ul>
+<li>
+<p><strong>¿Cómo traducir el "Engineering Computations"?</strong> Creo que una buena traducción (aunque no compacta) es "Cálculos computacionales en Ingeniería". Sólo "cálculos" no le hace justicia a los notebooks, y "cómputos" no me suena bien.</p>
+</li>
+<li>
+<p><strong>¿Qué traducir y que no traducir?</strong> Traduciré los nombres de los notebooks, el archivo README se llamará LEEME, los comentarios, mensajes y valores de strings, de ser necesario. Los nombres de las variables, a menos que sea extremadamente necesario, no los traduciré para garantizar compatibilidad con el notebook original y porque en general en python se programa con variables en inglés para que se lea más facil.</p>
+</li>
+<li>
+<p><strong>¿Traducir keywords, como lists, arrays, etc.?</strong> Me parece que no, porque de todas formas hay que buscar documentación y el código se hace más facil de entender si sabes ese poco de inglés.</p>
+</li>
+<li>
+<p><strong>Respecto a consideraciones de commits</strong>: commit sin output de celdas para mantener los diffs más concisos, pero con output de celdas en la versión final.</p>
+</li>
+<li>
+<p><strong>Los notebooks en español tendrán badges</strong>. Me gustan los badges y permite fácilmente volver al idioma original.</p>
+</li>
+</ul>
+</div>
+        </div>
+        
+        <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../introduccion-al-markdown/" rel="prev" title="Introducción al Markdown">Previous post</a>
+            </li>
+        </ul>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nikolademo",
+            disqus_url="https://sebastiandres.github.io/posts/calculos-computacionales-en-ingenieria-parte-1/",
+        disqus_title="C\u00e1lculos Computacionales en Ingenier\u00eda - parte 1",
+        disqus_identifier="cache/posts/calculos-computacionales-en-ingenieria-parte-1.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+    
+
+
+    </div>
+
+        
+       <script>var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2018         <a href="mailto:">sebastiandres</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>
