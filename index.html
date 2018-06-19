@@ -23,6 +23,139 @@
         </ul></section><section class="page-content"><div class="content" rel="main">
             
         <div class="post">
+            <h1 class="title"><a href="posts/bot-de-telegram/">Bot de Telegram</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2018-06-19T04:15:11+00:00">2018-06-19 04:15</time>
+</div>
+                <div class="stats">
+                    
+        
+    <a href="posts/bot-de-telegram/#disqus_thread" data-disqus-identifier="cache/posts/bot-de-telegram.html">Comments</a>
+
+
+                </div>
+            
+        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="categories/telegram/" rel="tag">telegram</a></li>
+        </ul>
+</div>
+
+            </div>
+            <div class="body">
+                <div>
+<p>El fin de semana estuve jugando con bots de telegram, influenciado por algunos comentarios en el team de Data Science y de algunos ejempos muy interesantes, como el asombroso <a href="https://telegram.me/py_uji_bot">https://telegram.me/py_uji_bot</a> que recibe comandos de python y regresa la ejecución correspondiente. Así que me lancé manos a la obra a ver que tan difícil era y que podía aprender en el proceso. TLDR; es fácil y entretenid</p>
+<p>El primer paso fue revisar la documentación en línea, y afortunadamente, existe bastantes ejemplos. En mi caso, encontré simple y funcional la librería  que proporciona varios ejemplos y es bastate fácil de usar. Creo que hay otras por ahí, pero no podría decir mucho ni menos comparar. Usé esta y no me dió problemas.</p>
+<p>Los pasos:</p>
+<ul>
+<li>
+<p>Hay que contactar al <a href="https://web.telegram.org/#/im?p=@BotFather">BotFather</a> (brillante parodia del padrino/godfather), y pedir la creación de un nuevo bot. Para ello, hay que crear un nombre de usuario y un nombre del bot, y obtendras el token para comunicarte con el bot y el enlace que puedes compartir con el resto del mundo.</p>
+</li>
+<li>
+<p>Hay que instalar una librería para que procese y conteste los mensajes que se reciben. En este caso, usando <a href="https://github.com/eternnoir/pyTelegramBotAPI">pyTelegramBotAPI</a>. Por ejemplo, el siguiente código crearía un ambiente en conda especifico para telegram, activaría e instalaría la libreria (que se llama telepot en pypi).</p>
+</li>
+</ul>
+<pre class="code literal-block"><span></span>conda create --name telegram
+source activate telegram
+pip install telepot
+</pre>
+
+
+<ul>
+<li>Después de jugar y probar un rato, ya averigüe lo más básico: enviar un mensaje de vuelta a un usuario que te envio un mensaje (en python recibido en la variable <code>message</code>).</li>
+</ul>
+<pre class="code literal-block"><span></span><span class="n">chatid</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span>
+<span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Hola mundo."</span><span class="p">)</span>
+</pre>
+
+
+<p>Para probar los conceptos, pense que algo entretenido era crear un juego de ahorcado (hangman) al que, cuando tu le enviaras una letra, te respondiera para permitir ir  adivinando la palabra. El código más básico en el que pude pensar es el siguiente:</p>
+<pre class="code literal-block"><span></span><span class="c1"># Learn more library details at: https://github.com/eternnoir/pyTelegramBotAPI</span>
+
+<span class="kn">import</span> <span class="nn">telebot</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">''</span> <span class="c1"># Colocar aca el token recibido</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telebot</span><span class="o">.</span><span class="n">TeleBot</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">known_word</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">unknown_word</span> <span class="o">=</span> <span class="s2">"_"</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">known_word</span><span class="p">)</span>
+<span class="n">fail_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">max_count</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="c1"># Replace</span>
+<span class="k">def</span> <span class="nf">replace_letter</span><span class="p">(</span><span class="n">known_word</span><span class="p">,</span> <span class="n">unknown_word</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+    <span class="n">new_unknown_word</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">known_word</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">known_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">letter</span><span class="p">:</span>
+            <span class="n">new_unknown_word</span> <span class="o">+=</span> <span class="n">known_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_unknown_word</span> <span class="o">+=</span> <span class="n">unknown_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">new_unknown_word</span>
+
+<span class="k">def</span> <span class="nf">formatted_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="s2">" "</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">word</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start_game</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">known_word</span><span class="p">,</span> <span class="n">unknown_word</span><span class="p">,</span> <span class="n">fail_count</span><span class="p">,</span> <span class="n">max_count</span>
+    <span class="n">known_word</span> <span class="o">=</span> <span class="s2">"mongolia"</span>
+    <span class="n">unknown_word</span> <span class="o">=</span> <span class="s2">"_"</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">known_word</span><span class="p">)</span>
+    <span class="n">fail_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_count</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="c1"># Handles all text messages that contains the commands '/start' or '/inicio'.</span>
+<span class="nd">@bot.message_handler</span><span class="p">(</span><span class="n">commands</span><span class="o">=</span><span class="p">[</span><span class="s1">'start'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">handle_start_help</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">known_word</span><span class="p">,</span> <span class="n">unknown_word</span><span class="p">,</span> <span class="n">fail_count</span><span class="p">,</span> <span class="n">max_count</span><span class="p">,</span> <span class="n">success_count</span>
+    <span class="n">start_game</span><span class="p">()</span>
+    <span class="n">chatid</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Hola, bienvenido al juego del colgado."</span><span class="p">)</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Trata de adivinar la siguiente palabra."</span><span class="p">)</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="n">formatted_word</span><span class="p">(</span><span class="n">unknown_word</span><span class="p">))</span>
+
+<span class="c1"># usar la primera letra</span>
+<span class="nd">@bot.message_handler</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">msg</span><span class="p">:</span> <span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">send_something</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">known_word</span><span class="p">,</span> <span class="n">unknown_word</span><span class="p">,</span> <span class="n">fail_count</span><span class="p">,</span> <span class="n">max_count</span>
+    <span class="n">chatid</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">if</span> <span class="n">fail_count</span><span class="o">&lt;=</span><span class="n">max_count</span><span class="p">:</span>
+        <span class="n">letter</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Probando con la letra: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">letter</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">known_word</span><span class="p">:</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Si, que suerte!"</span><span class="p">)</span>
+            <span class="n">unknown_word</span> <span class="o">=</span> <span class="n">replace_letter</span><span class="p">(</span><span class="n">known_word</span><span class="p">,</span> <span class="n">unknown_word</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fail_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"No!!! Te quedan {} intentos"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">max_count</span><span class="o">-</span><span class="n">fail_count</span><span class="p">))</span>        
+        <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="n">formatted_word</span><span class="p">(</span><span class="n">unknown_word</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">unknown_word</span> <span class="o">==</span> <span class="n">known_word</span><span class="p">:</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Bravo, has adivinado!"</span><span class="p">)</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Coloca /start para iniciar otro juego"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Has perdido!"</span><span class="p">)</span>
+        <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chatid</span><span class="p">,</span> <span class="s2">"Coloca /start para iniciar otro juego"</span><span class="p">)</span>
+
+<span class="c1"># Apply all</span>
+<span class="n">bot</span><span class="o">.</span><span class="n">polling</span><span class="p">()</span>
+</pre>
+
+
+<p>Lo anterior probablemente deja todavía un gran espacio a mejoras. En mi defensa, estaba viendo el partido de Brasil-Suiza con mi hijo que queria jugar INMEDIATAMENTE el juego :-)</p>
+<p>Algunas mejoras inmediatas que se me ocurren, para una próxima versión:
+<em> Orientación a objeto, para evitar las variables globales y encapsular las acciones del juego.
+</em> Imprimir el resultado con la figura clásica del ahorcado. No hay que hacerle asco al ascii.
+<em> Tener un listado amplio de palabras, una de las cuales se selecciona al azar al colocar <code>/start</code>.
+</em> Mantener un listado de las letras ocupadas y no descontar si se usa nuevamente.
+<em> Responder con algo inteligente o bromista a algunas palabras o comentarios.
+</em> Enviar una imagen o sonido al finalizar el juego.</p>
+<p>Sin embargo, el proceso fue muy entretenido, y además de permitirme una primera aproximación a bots en telegram, generó una interesante instancia de discusión con mi hijo: ¿Cuáles son las reglas del ahorcado? ¿Cómo podemos enseñarselas a un computador? ¿Cómo puede detectar el computador cuando se gana? ¿Y cuando se pierde? ¿Que hacer con la diferencia entre mayúsculas y minúsculas?  </p>
+<p><img alt="colga2_bot" src="posts/bot-de-telegram/colga2_bot.png" title="colga2_bot"></p>
+<p>Esta versión no es suficientemente interesante como para dejarla en línea, pero quizás (un remoto quizás) ¡la próxima versión si esté disponible!</p>
+</div>
+            </div>
+        </div>
+        <div class="post">
             <h1 class="title"><a href="posts/calculos-computacionales-en-ingenieria-parte-1/">Cálculos Computacionales en Ingeniería - parte 1</a></h1>
             <div class="meta">
                 <div class="authordate">
